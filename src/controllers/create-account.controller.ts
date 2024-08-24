@@ -1,3 +1,5 @@
+import { ZodValidationPipe } from '@/pipes/zod-validation-pipe.js'
+import { PrismaService } from '@/prisma/prisma.service.js'
 import {
   ConflictException,
   Body,
@@ -6,9 +8,7 @@ import {
   UsePipes,
 } from '@nestjs/common'
 import { hash } from 'bcryptjs'
-import { ZodValidationPipe } from 'src/pipes/zod-validation-pipe'
 
-import { PrismaService } from 'src/prisma/prisma.service'
 import { z } from 'zod'
 
 const createAccountBodySchema = z.object({
