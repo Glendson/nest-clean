@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "ESNext",
     "strict": true,
     "declaration": true,
     "removeComments": true,
@@ -21,7 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
     },
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node",
     "types": ["vitest/globals"],
   }
 }
