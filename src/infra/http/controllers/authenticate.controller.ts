@@ -1,5 +1,5 @@
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe.js'
-import { PrismaService } from '@/infra/prisma/prisma.service.js'
+import { PrismaService } from '@/infra/database/prisma/prisma.service.js'
 import {
   Body,
   Controller,
