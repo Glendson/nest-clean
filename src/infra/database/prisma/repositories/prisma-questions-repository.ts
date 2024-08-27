@@ -3,14 +3,14 @@ import { QuestionsRepository } from '@/domain/forum/application/repositories/que
 import { Question } from '@/domain/forum/enterprise/entities/question'
 import { Injectable } from '@nestjs/common'
 import { PrismaService } from '../prisma.service'
-import { PrismQuestionMapper } from '../mappers/prisma-question-mapper'
+import { PrismaQuestionMapper } from '../mappers/prisma-question-mapper'
 
 @Injectable()
 export class PrismaQuestionsRepository implements QuestionsRepository {
   constructor(private prisma: PrismaService) {}
 
   async create(question: Question): Promise<void> {
-    const data = PrismQuestionMapper.toPrisma(question)
+    const data = PrismaQuestionMapper.toPrisma(question)
 
     await this.prisma.question.create({
       data,
@@ -18,7 +18,7 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
   }
 
   async delete(question: Question): Promise<void> {
-    const data = PrismQuestionMapper.toPrisma(question)
+    const data = PrismaQuestionMapper.toPrisma(question)
 
     await this.prisma.question.delete({
       where: {
@@ -28,7 +28,7 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
   }
 
   async save(question: Question): Promise<void> {
-    const data = PrismQuestionMapper.toPrisma(question)
+    const data = PrismaQuestionMapper.toPrisma(question)
 
     await this.prisma.question.update({
       where: {
@@ -47,7 +47,7 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
 
     if (!question) return null
 
-    return PrismQuestionMapper.toDomain(question)
+    return PrismaQuestionMapper.toDomain(question)
   }
 
   async findBySlug(slug: string): Promise<Question | null> {
@@ -59,7 +59,7 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
 
     if (!question) return null
 
-    return PrismQuestionMapper.toDomain(question)
+    return PrismaQuestionMapper.toDomain(question)
   }
 
   async findManyRecent({ page }: PaginationParams): Promise<Question[]> {
@@ -71,6 +71,6 @@ export class PrismaQuestionsRepository implements QuestionsRepository {
       skip: (page - 1) * 20,
     })
 
-    return questions.map(PrismQuestionMapper.toDomain)
+    return questions.map(PrismaQuestionMapper.toDomain)
   }
 }
