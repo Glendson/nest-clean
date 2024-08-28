@@ -68,11 +68,6 @@ model Answer {
   @@map("answers")
 }
 
-enum CommentType {
-  QUESTION
-  ANSWER
-}
-
 model Comment {
   id        String    @id @default(uuid())
   content   String
@@ -82,9 +77,6 @@ model Comment {
   authorId   String  @map("author_id")
   questionId String? @map("question_id")
   answerId   String? @map("answer_id")
-
-  parentId   String
-  parentType CommentType
 
   author   User      @relation(fields: [authorId], references: [id])
   question Question? @relation(fields: [questionId], references: [id])

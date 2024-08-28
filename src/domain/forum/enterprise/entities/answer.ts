@@ -7,7 +7,7 @@ import { AnswerCreatedEvent } from '../events/answer-created-event'
 export interface AnswerProps {
   content: string
   createdAt: Date
-  updatedAt?: Date
+  updatedAt?: Date | null
   authorId: UniqueEntityID
   questionId: UniqueEntityID
   attachments: AnswerAttachmentList
