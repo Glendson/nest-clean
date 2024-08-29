@@ -6,6 +6,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  HttpCode,
   Param,
   Post,
 } from '@nestjs/common'
@@ -18,11 +19,12 @@ const commentOnAnswerBodySchema = z.object({
 
 type CommentOnAnswerBodySchema = z.infer<typeof commentOnAnswerBodySchema>
 
-@Controller('/questions/:answerId/comments')
+@Controller('/answers/:answerId/comments')
 export class CommentOnAnswerController {
   constructor(private commentOnAnswer: CommentOnAnswerUseCase) {}
 
   @Post()
+  @HttpCode(201)
   async handle(
     @Body(new ZodValidationPipe(commentOnAnswerBodySchema))
     body: CommentOnAnswerBodySchema,
