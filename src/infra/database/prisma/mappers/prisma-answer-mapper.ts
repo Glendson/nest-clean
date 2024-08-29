@@ -7,7 +7,7 @@ export class PrismaAnswerMapper {
     return Answer.create(
       {
         content: raw.content,
-        questionId: new UniqueEntityID(raw.authorId),
+        questionId: new UniqueEntityID(raw.questionId),
         authorId: new UniqueEntityID(raw.authorId),
         createdAt: raw.createdAt,
         updatedAt: raw.updatedAt,
