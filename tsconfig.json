@@ -22,6 +22,6 @@
       "@/*": ["./src/*"],
     },
     "moduleResolution": "Node",
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "multer"],
   }
 }
