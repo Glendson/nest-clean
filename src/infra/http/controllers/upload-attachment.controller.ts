@@ -25,7 +25,7 @@ export class UploadAttachmentController {
       new ParseFilePipe({
         validators: [
           new MaxFileSizeValidator({
-            maxSize: 1024 * 1024 * 2,
+            maxSize: 1024 * 1024 * 3,
           }),
           new FileTypeValidator({
             fileType: '.(png|jpg|jpeg|pdf)',
@@ -36,7 +36,7 @@ export class UploadAttachmentController {
     file: Express.Multer.File,
   ) {
     const result = await this.uploadAndCreateAttachment.execute({
-      fileName: file.fieldname,
+      fileName: file.originalname,
       fileType: file.mimetype,
       body: file.buffer,
     })

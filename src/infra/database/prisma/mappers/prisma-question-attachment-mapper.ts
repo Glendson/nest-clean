@@ -29,7 +29,7 @@ export class PrismaQuestionAttachmentMapper {
         },
       },
       data: {
-        questionId: attachments[0].id.toString(),
+        questionId: attachments[0].questionId.toString(),
       },
     }
   }
