@@ -2,6 +2,7 @@ import { UniqueEntityID } from '@/core/entities/unique-entity-id.js'
 import { Either, right } from '@/core/either.js'
 import { Notification } from '../../enterprise/entities/notification.js'
 import { NotificationsRepository } from '../repositories/notifications-repository.js'
+import { Injectable } from '@nestjs/common'
 
 interface SendNotificationUseCaseRequest {
   title: string
@@ -16,6 +17,7 @@ type SendNotificationUseCaseResponse = Either<
   }
 >
 
+@Injectable()
 export class SendNotificationUseCase {
   constructor(private notificationsRepository: NotificationsRepository) {}
 

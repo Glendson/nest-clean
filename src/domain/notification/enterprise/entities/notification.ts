@@ -4,7 +4,7 @@ import { Optional } from '@/core/types/optional'
 
 export interface NotificationProps {
   title: string
-  readAt?: Date
+  readAt?: Date | null
   content: string
   createdAt: Date
   recipientId: UniqueEntityID
