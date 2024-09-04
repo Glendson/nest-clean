@@ -1,7 +1,3 @@
-Aqui está um exemplo detalhado do `README.md` para o projeto no repositório do GitHub:
-
----
-
 # Nest Clean Architecture
 
 ![NestJS](https://img.shields.io/badge/NestJS-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
